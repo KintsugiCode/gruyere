@@ -236,6 +236,8 @@ class GruyereRequestHandler(BaseHTTPRequestHandler):
   # Urls that can only be accessed by administrators.
   _PROTECTED_URLS = [
       '/quitserver',
+      '/QUITSERVER',
+      '/RESET',
       '/reset'
   ]
 
