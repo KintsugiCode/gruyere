@@ -25,7 +25,7 @@ To run Gruyere locally, you'll first need to install Python 2.7, if you don't al
 
 ## Threat Model
 
-#### Cybersecurity measures implemented can be found in the develop branch's open PRs and are elaborated on in the following threat model document
+#### Cybersecurity measures implemented can be found in the open PRs and are elaborated on in the following threat model document
 
 https://docs.google.com/document/d/e/2PACX-1vSl7NHOCI8WmsNo4y_KhtT34-lDKWox5i_PLhvRdVqVteUqsiXTZcU4AIZMzBF5dem2XBVNpOeW54tX/pub
 
