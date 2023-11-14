@@ -81,6 +81,7 @@ def _SanitizeTag(t):
     return t
   else:
     return ''
+  
 '''
   disallowed_attributes = [
       'onblur', 'onchange', 'onclick', 'ondblclick', 'onfocus',
@@ -88,21 +89,15 @@ def _SanitizeTag(t):
       'onmousemove', 'onmouseout', 'onmouseup', 'onreset',
       'onselect', 'onsubmit', 'onunload'
   ]
-
-
   # Extract the tag name and make sure it's allowed.
   if t.startswith('</'):
-    print("----1", t)
     return t
   m = TAG_RE.match(t)
-  print("----2", t)
-  print("----3", m)
   if m is None:
     return t
   tag_name = m.group(1)
   if tag_name not in allowed_tags:
     t = t[:m.start(1)] + 'blocked' + t[m.end(1):]
-    print("----4", t)
 
   # This is a bit heavy handed but we want to be sure we don't
   # allow any to get through.
