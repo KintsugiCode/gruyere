@@ -640,6 +640,8 @@ class GruyereRequestHandler(BaseHTTPRequestHandler):
       if hashed != str(hash(cookie_secret + cookie_data) & 0x7FFFFFF):
         return self.NULL_COOKIE
       values = cookie_data.split('|')
+      if len(values) > 3 :
+        return self.NULL_COOKIE
       return {
           COOKIE_UID: values[0],
           COOKIE_ADMIN: values[1] == 'admin',
