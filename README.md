@@ -12,3 +12,18 @@ To run Gruyere locally, you'll first need to install Python 2.7, if you don't al
 ``` $ ./gruyere.py ```
 
 
+---
+
+
+## Threat Diagram
+
+![gruyereThreatDiagram](https://github.com/KintsugiCode/gruyere/assets/41804800/ecf557da-2f78-4b2a-a3d4-22de115db399)
+
+
+---
+
+
+## Threat Model
+
+https://docs.google.com/document/d/e/2PACX-1vSl7NHOCI8WmsNo4y_KhtT34-lDKWox5i_PLhvRdVqVteUqsiXTZcU4AIZMzBF5dem2XBVNpOeW54tX/pub
+
