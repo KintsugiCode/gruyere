@@ -59,6 +59,7 @@ COOKIE_UID = 'uid'
 COOKIE_ADMIN = 'is_admin'
 COOKIE_AUTHOR = 'is_author'
 
+whitelisted_resources = ["/" + n for n in os.listdir(RESOURCE_PATH)] + ["/data.py"]
 
 # Set to True to cause the server to exit after processing the current url.
 quit_server = False
@@ -510,6 +511,10 @@ class GruyereRequestHandler(BaseHTTPRequestHandler):
       specials: Other special values for this request.
       params: Cgi parameters.
     """
+    
+    if filename not in whitelisted_resources:
+      return
+    
     content_type = None
     if filename.endswith('.gtl'):
       self._SendTemplateResponse(filename, specials, params)
