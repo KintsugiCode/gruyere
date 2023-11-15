@@ -1,4 +1,4 @@
-# gruyere
+# Gruyere
 Google Gruyere's vulnerable webapp
 
 ## Running Gruyere locally
@@ -11,6 +11,26 @@ To run Gruyere locally, you'll first need to install Python 2.7, if you don't al
 
 ``` $ ./gruyere.py ```
 
+
+---
+
+## Gruyere's Structure
+
+- ```gruyere.py``` the main Gruyere web server
+- ```data.py``` stores the default data in the database. There is an administrator account and two default users.
+- ```gtl.py``` the Gruyere template language
+- ```sanitize.py``` the Gruyere module used for sanitizing HTML to protect the application from security holes.
+- ```resources/...``` holds all template files, images, CSS, etc.
+
+---
+
+## Gruyere's Features
+
+- HTML in Snippets: Users can include a limited subset of HTML in their snippets.
+- File upload: Users can upload files to the server, e.g., to include pictures in their snippets.
+- Web administration: System administrators can manage the system using a web interface.
+- New accounts: Users can create their own accounts.
+- Template language: Gruyere Template Language(GTL) is a new language that makes writing web pages easy as the templates connect directly to the database. Documentation for GTL can be found in gruyere/gtl.py. 
 
 ---
 
