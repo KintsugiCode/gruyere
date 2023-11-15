@@ -77,13 +77,18 @@ def _SanitizeTag(t):
       'h4', 'h5', 'h6', 'hr', 'i', 'img', 'li', 'ol', 'p', 's', 'small',
       'span', 'strong', 'table', 'td', 'tr', 'u', 'ul',
   ]
+  if t in allowed_tags:
+    return t
+  else:
+    return ''
+  
+'''
   disallowed_attributes = [
       'onblur', 'onchange', 'onclick', 'ondblclick', 'onfocus',
       'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onmousedown',
       'onmousemove', 'onmouseout', 'onmouseup', 'onreset',
       'onselect', 'onsubmit', 'onunload'
   ]
-
   # Extract the tag name and make sure it's allowed.
   if t.startswith('</'):
     return t
@@ -98,4 +103,6 @@ def _SanitizeTag(t):
   # allow any to get through.
   for a in disallowed_attributes:
     t = t.replace(a, 'blocked')
-  return t
+'''
+
+  
