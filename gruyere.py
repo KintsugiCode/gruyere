@@ -449,8 +449,18 @@ class GruyereRequestHandler(BaseHTTPRequestHandler):
       else:
         if newpw:
           profile_data['pw'] = newpw
-        database[uid].update(profile_data)
-        redirect = '/'
+        # If is_admin = true, then a user can update their whole profile
+        elif database[uid].get('is_admin', False):
+          database[uid].update(profile_data)
+          redirect = '/'
+        # If is_admin = False and the profile update is attempting to set it to true, then someone is up to no good!
+        elif not database[uid].get('is_admin', False) and profile_data.get('is_admin', False):      
+          print("Error should be thrown here -- someone is up to no good!")
+          redirect = '/'
+        # If is_admin = False and the profile update isn't attempting to change that, then it is an allowed profile update by a non-admin user.
+        elif not database[uid].get('is_admin', False) and not profile_data.get('is_admin', False):
+          database[uid].update(profile_data)
+          redirect = '/'
     else:
       message = 'Invalid request'
     _Log('SetProfile(%s, %s): %s' %(str(uid), str(action), str(message)))
